@@ -1,0 +1,41 @@
+/* Forum Topics List Styles */
+.forum-topics-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .forum-topic-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .forum-topic-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-color: #4299e1;
+  }
+  
+  .forum-topic-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 10px;
+  }
+  
+  .forum-topic-author {
+    font-size: 0.9rem;
+    color: #4a5568;
+    margin-bottom: 8px;
+  }
+  
+  .forum-topic-comments {
+    font-size: 0.9rem;
+    color: #718096;
+  }
