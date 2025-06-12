@@ -17,7 +17,7 @@ const ForumPage = () => {
   useEffect(() => {
     const fetchTopics = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/forum/topics');
+        const response = await axios.get('https://api.teploivanov.ru/api/forum/topics');
         setTopics(response.data);
       } catch (error) {
         console.error('Ошибка при получении тем:', error);
@@ -26,7 +26,7 @@ const ForumPage = () => {
 
     const fetchServices = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/services');
+        const response = await axios.get('https://api.teploivanov.ru/api/services');
         setServices(response.data);
       } catch (error) {
         console.error('Ошибка при получении услуг:', error);
@@ -52,7 +52,7 @@ const ForumPage = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/forum/topic', {
+      const response = await axios.post('https://api.teploivanov.ru/api/forum/topic', {
         title: newTopicTitle,
         userId: user._id,
       });

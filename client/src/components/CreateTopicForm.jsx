@@ -12,7 +12,7 @@ const CreateTopicForm = ({ serviceId }) => {
     setError(null);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/topics', {
+      const response = await axios.post('https://api.teploivanov.ru/api/topics', {
         title,
         serviceId,
       });

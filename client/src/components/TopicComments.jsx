@@ -8,7 +8,7 @@ const TopicComments = ({ topicId }) => {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/topics/${topicId}/comments`);
+        const response = await axios.get(`https://api.teploivanov.ru/api/topics/${topicId}/comments`);
         setComments(response.data);
       } catch (err) {
         console.error(err);
@@ -21,7 +21,7 @@ const TopicComments = ({ topicId }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:5000/api/topics/${topicId}/comments`, {
+      const response = await axios.post(`https://api.teploivanov.ru/api/topics/${topicId}/comments`, {
         text: newComment,
       });
       setComments([...comments, response.data]);

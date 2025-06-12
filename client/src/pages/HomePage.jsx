@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import './home.css';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://api.teploivanov.ru/api';
 
 const HomePage = () => {
   const [latestReviews, setLatestReviews] = useState([]);

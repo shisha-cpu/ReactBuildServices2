@@ -18,7 +18,7 @@ const ForumTopicPage = () => {
     const fetchTopic = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get(`http://localhost:5000/api/forum/topic/${id}`);
+        const response = await axios.get(`https://api.teploivanov.ru/api/forum/topic/${id}`);
         setTopic(response.data);
       } catch (error) {
         console.error("Ошибка при загрузке темы:", error);
@@ -45,14 +45,14 @@ const ForumTopicPage = () => {
     setError('');
 
     try {
-      await axios.post('http://localhost:5000/api/forum/comment', {
+      await axios.post('https://api.teploivanov.ru/api/forum/comment', {
         topicId: id,
         text: commentText,
         userId: user._id
       });
 
       setCommentText('');
-      const response = await axios.get(`http://localhost:5000/api/forum/topic/${id}`);
+      const response = await axios.get(`https://api.teploivanov.ru/api/forum/topic/${id}`);
       setTopic(response.data);
     } catch (error) {
       console.error("Ошибка при добавлении комментария:", error);

@@ -27,10 +27,10 @@ const ServiceDetailPage = () => {
         const serviceData = await getServiceById(id);
         setService(serviceData);
 
-        const reviewsResponse = await axios.get(`http://localhost:5000/api/reviews/service/${id}`);
+        const reviewsResponse = await axios.get(`https://api.teploivanov.ru/api/reviews/service/${id}`);
         setReviews(reviewsResponse.data);
 
-        const forumResponse = await axios.get(`http://localhost:5000/api/forum/service/${id}`);
+        const forumResponse = await axios.get(`https://api.teploivanov.ru/api/forum/service/${id}`);
         if (forumResponse.data.exists) {
           setForumTopicId(forumResponse.data.topicId);
         }
@@ -77,14 +77,14 @@ const ServiceDetailPage = () => {
 
     try {
       const checkForumResponse = await axios.get(
-        `http://localhost:5000/api/forum/topic-by-name/${service.name}`
+        `https://api.teploivanov.ru/api/forum/topic-by-name/${service.name}`
       );
       
       let topicId;
       if (checkForumResponse.data.exists) {
         topicId = checkForumResponse.data.topicId;
       } else {
-        const topicResponse = await axios.post('http://localhost:5000/api/forum/topic', {
+        const topicResponse = await axios.post('https://api.teploivanov.ru/api/forum/topic', {
           title: service.name,
           serviceId: service._id,
           userId: user._id
@@ -92,7 +92,7 @@ const ServiceDetailPage = () => {
         topicId = topicResponse.data._id;
       }
 
-      await axios.post('http://localhost:5000/api/forum/comment', {
+      await axios.post('https://api.teploivanov.ru/api/forum/comment', {
         topicId,
         text: commentText,
         userId: user._id
@@ -115,9 +115,9 @@ const ServiceDetailPage = () => {
 
     try {
       if (!forumTopicId && user && service) {
-        const forumResponse = await axios.get(`http://localhost:5000/api/forum/service/${id}`);
+        const forumResponse = await axios.get(`https://api.teploivanov.ru/api/forum/service/${id}`);
         if (!forumResponse.data.exists) {
-          const topicResponse = await axios.post('http://localhost:5000/api/forum/topic', {
+          const topicResponse = await axios.post('https://api.teploivanov.ru/api/forum/topic', {
             title: service.name,
             serviceId: service._id,
             userId: user._id
@@ -126,7 +126,7 @@ const ServiceDetailPage = () => {
         }
       }
 
-      const reviewsResponse = await axios.get(`http://localhost:5000/api/reviews/service/${id}`);
+      const reviewsResponse = await axios.get(`https://api.teploivanov.ru/api/reviews/service/${id}`);
       setReviews(reviewsResponse.data);
     } catch (error) {
       console.error('Ошибка при создании топика:', error);

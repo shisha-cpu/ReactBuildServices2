@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './AdminPanelPage.css'
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://api.teploivanov.ru/api';
 
 const AdminPanelPage = () => {
   const [services, setServices] = useState([]);

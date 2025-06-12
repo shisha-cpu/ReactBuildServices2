@@ -23,7 +23,7 @@ const ForumCreatePage = () => {
     setError(null);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/forum/topic', {
+      const response = await axios.post('https://api.teploivanov.ru/api/forum/topic', {
         title,
         serviceId: id,
         userId: user.userInfo._id

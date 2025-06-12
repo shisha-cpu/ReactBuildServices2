@@ -7,7 +7,7 @@ const ForumTopicList = ({ onTopicSelect }) => {
   useEffect(() => {
     const fetchTopics = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/topics');
+        const response = await axios.get('https://api.teploivanov.ru/api/topics');
         setTopics(response.data);
       } catch (err) {
         console.error(err);

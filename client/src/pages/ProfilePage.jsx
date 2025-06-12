@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './ProfilePage.css'
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://api.teploivanov.ru/api';
 
 const ProfilePage = () => {
   const user = useSelector(state => state.user.userInfo);
